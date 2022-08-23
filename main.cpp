@@ -1,42 +1,33 @@
 #include <iostream>
-#include <ctime>
-using namespace std;
+#include <cmath>
+using namespace std ;
 
-int main()
+
+int main ()
 {
-	setlocale(LC_ALL, "am");
+	const int ROWS = 2;
+	const int COLS = 4 ;
 
-	srand(time(NULL));
-
-	int const SIZE = 10;
-	int arr[SIZE];
-	bool alreadyThere;
-
-	for (int i = 0; i < SIZE; )
-	{
-		alreadyThere = false;
-		int newRandomValue = rand() % 20;
-		
-		for(int j = 0 ; j < i; j++){
-			if (arr[j] == newRandomValue )
-			{
-				alreadyThere = true;
-				break;
-			}
-		}
-		if(!alreadyThere )
+	int  arr [ROWS][COLS] = {{2,4,7,45},{5,9,8,0}};
+	 
+		for(int i = 0; i <  ROWS; i++)
 		{
-			arr[i] = newRandomValue;
-			i++;
-		}
-	}
-
-
-	for(int i = 0; i < SIZE; i++)
-	{
-		cout << arr[i] << endl;
-	}
-
+			for(int j = 0; j <  COLS; j++)
+			{
+				arr[i][j] = rand() % 10;
+		 	}
+			
+		 }
+		
+	for(int i = 0; i <  ROWS; i++)
+		{
+			for(int j = 0; j <  COLS; j++)
+			{
+				 cout << arr[i][j] << "\t";
+		 	}
+			cout << endl;
+		 }
+	return 0;
 }
 
 
@@ -54,15 +45,44 @@ int main()
 
 
 
+// #include <iostream>
+// #include <ctime>
+// using namespace std;
 
+// int main()
+// {
+// 	setlocale(LC_ALL, "am");
 
+// 	srand(time(NULL));
 
+// 	int const SIZE = 10;
+// 	int arr[SIZE]={};
+// 	bool alreadyThere;
 
-
-
-
-
-
+// 	for (int i = 0; i < SIZE; )
+// 	{
+// 		alreadyThere = false;
+// 		int newRandomValue = rand() % 20;
+		
+// 		for(int j = 0 ; j < i; j++){
+// 			if (arr[j] == newRandomValue )
+// 			{
+// 				alreadyThere = true;
+// 				break;
+// 			}
+// 		}
+// 		if(!alreadyThere )
+// 		{
+// 			arr[i] = newRandomValue;
+// 			i++;
+// 		}
+// 	}
+// 	for(int i = 0; i < SIZE; i++)
+// 	{
+// 		cout << arr[i] << endl;
+// 	}
+// return 0;
+// }
 
 
 
